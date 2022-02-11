@@ -6,8 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./javascript/index.js"></script>
+    <script src="./javascript/services/comedianApi.js"></script>
+    <script src="./javascript/services/eventApi.js"></script>
+    <script src="./javascript/models/comedian.js"></script>
+    <script src="./javascript/models/event.js"></script>
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>Comedians</h1>
+    <div id="comedians">
+        
+    </div>
+    <form id="create-comedian-form">
+        <h2>Create New Comedian:</h2>
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name"/>
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name"/>
+        <label for="age">Age:</label>
+        <input type="number" name="age"/>
+        <label for="description">Description:</label>
+        <textarea name="description"></textarea>
+        <label for="style">Style:</label>
+        <input type="style" name="style"/>
+        <input type="submit" value="Create"/>
+    </form>
 </body>
 </html>
