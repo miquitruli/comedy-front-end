@@ -15,4 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
         event.target.reset() //returns form element, and clear form to default value
         
     }) 
+
+    const createEventForm = document.getElementById("create-event-form")
+    createEventForm.addEventListener("submit", (event) => {
+        event.preventDefault() //this prevents page from refreshing which for a form is a default behavior
+        const data = {
+            name: event.target.name.value,
+            address: event.target.address.value,
+            city: event.target.city.value,
+            zipcode: event.target.zipcode.value,
+            date: event.target.date.value,
+            venue: event.target.venue.value,       
+        }
+        EventApi.createEvent(data)
+        event.target.reset() //returns form element, and clear form to default value
+        
+    }) 
 })
