@@ -14,7 +14,7 @@ class Event {
     static all = []
 
     addToPage() {
-        const events = document.getElementById("event")
+        const events = document.getElementById("events")
         const eventContainer = document.createElement("div")
         eventContainer.id = `event-${this.id}` //make sure each id is different so we can target it.
         eventContainer.innerHTML = `
