@@ -11,8 +11,9 @@
     <script src="./javascript/services/eventApi.js"></script>
     <script src="./javascript/models/comedian.js"></script>
     <script src="./javascript/models/event.js"></script>
+    <link rel="stylesheet" href="./styles/style.css"/>
 </head>
-<body>
+<body> 
     <h1>Comedians</h1>
     <div id="comedians">
         
@@ -36,7 +37,12 @@
     <div id="events">
         
     </div>
-    <form id="create-comedian-form">
+    <form id="create-event-form">
+        <p><label for="comedian">Choose Comedian:</label>
+        <select name="comedian_id" class="comedian-list">
+            
+        </select></p>
+
         <p><h2>Create New Event:</h2></p>
             <p><label for="name">Name:</label>
         <input type="text" name="name"/></p>
@@ -44,10 +50,12 @@
         <input type="text" name="address"/></p>
         <p><label for="city">City:</label>
         <input type="text" name="city"/></p>
+        <p><label for="state">State:</label>
+        <input type="text" name="state"/></p>
         <p><label for="zipcode">Zipcode:</label>
-        <input type="number" name="zipcode"/></p>
+        <input type="text" name="zipcode"/></p>
         <p><label for="date">date:</label>
-        <input type="text" name="date"/></p>
+        <input type="datetime-local" name="date"/></p>
         <p><label for="venue">venue:</label>
         <input type="text" name="venue"/></p>
         

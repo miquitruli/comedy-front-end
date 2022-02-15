@@ -20,9 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
     createEventForm.addEventListener("submit", (event) => {
         event.preventDefault() //this prevents page from refreshing which for a form is a default behavior
         const data = {
+            comedian_id: event.target.comedian_id.value,
             name: event.target.name.value,
             address: event.target.address.value,
             city: event.target.city.value,
+            state: event.target.state.value,
             zipcode: event.target.zipcode.value,
             date: event.target.date.value,
             venue: event.target.venue.value,       

@@ -82,4 +82,15 @@ class Comedian {
             <button class="delete-comedian">Delete</button>
         `
     }
+
+    static populateSelectTag() {
+        const comedianSelect = document.querySelectorAll(".comedian-list")
+        comedianSelect.forEach( select => {
+            let comedianOptions = ""
+            Comedian.all.forEach(c => {
+                comedianOptions +=`<option value="${c.id}">${c.first_name} ${c.last_name}</option>` //iterate over all comedians and create an option tag for each comedian
+            })
+            select.innerHTML = comedianOptions
+        }) 
+    }
 }

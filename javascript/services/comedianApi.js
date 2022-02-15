@@ -7,7 +7,9 @@ class ComedianApi {
                 const comedian = new Comedian(c)
                 comedian.addToPage() //calling add to page
             })  //array of every single comedian
+        Comedian.populateSelectTag()
         })
+        
     }
 
     static createComedian(comedianData) {

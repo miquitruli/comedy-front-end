@@ -1,12 +1,14 @@
 class Event {
-    constructor({name, address, city, zipcode, date, venue, comedian_id})  {
+    constructor({name, address, city, state, zipcode, date, venue, comedian_name, id})  {
         this.name = name;
         this.address = address;
         this.city = city;
+        this.state = state;
         this.zipcode = zipcode;
         this.date = date;
         this.venue = venue;
-        this.comedian_id = comedian_id;
+        this.comedian_name = comedian_name;
+        this.id = id;
 
         Event.all.push(this)
     }   
@@ -18,7 +20,7 @@ class Event {
         const eventContainer = document.createElement("div")
         eventContainer.id = `event-${this.id}` //make sure each id is different so we can target it.
         eventContainer.innerHTML = `
-            <h4>Name: ${this.name} ${this.address} ${this.city} ${this.zipcode} ${this.date} ${this.venue}</h4>
+            <h4>Name: ${this.comedian_name} ${this.name} ${this.address} ${this.city} ${this.state} ${this.zipcode} ${this.date} ${this.venue}</h4>
             <button class="edit-event">Edit</button>
             <button class="delete-event">Delete</button>
         `
@@ -38,6 +40,8 @@ class Event {
         const form = document.createElement("form")
         form.innerHTML = `
         <h2>Edit Event:</h2>
+        <select name="comedian_id" class="comedian-list">   
+        </select></p>
         <label for="name">Name:</label>
         <input type="text" name="name" value="${this.name}"/>
         <label for="address">Address:</label>
@@ -45,7 +49,9 @@ class Event {
         <label for="city">City:</label>
         <input type="text" name="city" value="${this.city}"/>
         <label for="zipcode">Zipcode:</label>
-        <input type="number" name="zipcode" value="${this.zipcode}"/>
+        <input type="text" name="state" value="${this.state}"/>
+        <label for="state">State:</label>
+        <input type="text" name="zipcode" value="${this.zipcode}"/>
         <label for="date">date:</label>
         <input type="text" name="date" value="${this.date}"/>
         <label for="venue">venue:</label>
@@ -55,33 +61,38 @@ class Event {
         `//we interpolate so the form is populated when we click edit
         const eventContainer = document.getElementById(`event-${this.id}`)
         eventContainer.append(form)
+        Comedian.populateSelectTag()
         form.addEventListener("submit", (event) => {
             event.preventDefault()
             const data = {
                 name: event.target.name.value,
                 address: event.target.address.value,
                 city: event.target.city.value,
+                state: event.target.state.value,
                 zipcode: event.target.zipcode.value,
                 date: event.target.date.value,
                 venue: event.target.venue.value,
-                id: this.id //because user cannot edit this
+                id: this.id, //because user cannot edit this
+                comedian_id: event.target.comedian_id.value
             }
-            EventApi.updateComedian(data)
+            EventApi.updateEvent(data)
             event.target.reset() //returns form element, and clear form to default value
         })
     }
 
-    updateComedian(eventData) {
+    updateEvent(eventData) {
+        this.comedian_name = eventData.comedian_name
         this.name = eventData.name
         this.address = eventData.address
         this.city= eventData.city
+        this.state= eventData.state
         this.zipcode = eventData.zipcode
         this.date = eventData.date
         this.venue = eventData.venue
 
         const eventContainer = document.getElementById(`event-${this.id}`)
         eventContainer.innerHTML = `
-            <h4>Name: ${this.name} ${this.address} ${this.city} ${this.zipcode} ${this.date} ${this.venue}</h4>
+            <h4>Name:  ${this.comedian_name} ${this.name} ${this.address} ${this.city} ${this.state} ${this.zipcode} ${this.date} ${this.venue}</h4>
             <button class="edit-event">Edit</button>
             <button class="delete-event">Delete</button>
         `

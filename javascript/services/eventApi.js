@@ -40,7 +40,7 @@ class EventApi {
 
     static updateEvent(eventData) {
         
-        fetch(`http://127.0.0.1:3000/comedians/${eventData.id}`, {
+        fetch(`http://127.0.0.1:3000/events/${eventData.id}`, {
             method: "PATCH", 
             headers: {
                 Accept: "application/json", 
