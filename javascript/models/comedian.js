@@ -17,8 +17,8 @@ class Comedian {
         const comedianContainer = document.createElement("div")
         comedianContainer.id = `comedian-${this.id}` //make sure each id is different so we can target it.
         comedianContainer.innerHTML = `
-            <h4>Name: ${this.first_name} ${this.last_name} ${this.age} ${this.style}</h4>
-            <p>${this.description}</p>
+            <h4>Name: ${this.first_name} ${this.last_name} Age: ${this.age} Comedy Style: ${this.style}</h4>
+            <p>Description: ${this.description}</p>
             <button class="edit-comedian">Edit</button>
             <button class="delete-comedian">Delete</button>
         `
