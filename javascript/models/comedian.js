@@ -45,7 +45,7 @@ class Comedian {
         <label for="age">Age:</label>
         <input type="number" name="age" value="${this.age}"/>
         <label for="description">Description:</label>
-        <textarea name="description">${this.description}"</textarea>
+        <textarea name="description">${this.description}</textarea>
         <label for="style">Style:</label>
         <input type="style" name="style" value="${this.style}"/>
         <input type="submit" value="Save"/>

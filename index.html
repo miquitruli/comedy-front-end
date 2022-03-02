@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="./styles/style.css"/>
 </head>
 <body> 
-    <h1>Comedians</h1>
+    <h1 id="comedy-title"> Welcome to you personalized Comedy World!</h1>
+    <h1>Comedians:</h1>
     <div id="comedians">
         
     </div>
@@ -33,10 +34,11 @@
         <p><input type="submit" value="Create"/>
     </form>
 
-    <h1>Events</h1>
+    <h1>Events:</h1>
     <div id="events">
         
     </div>
+    
     <form id="create-event-form">
         <p><label for="comedian">Choose Comedian:</label>
         <select name="comedian_id" class="comedian-list">
@@ -44,7 +46,7 @@
         </select></p>
 
         <p><h2>Create New Event:</h2></p>
-            <p><label for="name">Name:</label>
+            <p><label for="name">Event Name:</label>
         <input type="text" name="name"/></p>
         <p><label for="address">Address:</label>
         <input type="text" name="address"/></p>
@@ -61,5 +63,13 @@
         
         <p><input type="submit" value="Create"/></p>
     </form>
+
+    <form id="user-comments-form">
+        <input id="user-comments-input"  type="text">
+        <input id="user-comments-submit"  type="submit">
+    </form>
+
+    <p>Submitted comments will appear here inside this div below:</p>
+    <div id="user-comments-div"> </div> 
 </body>
 </html>

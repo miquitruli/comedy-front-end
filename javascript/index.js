@@ -33,4 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         event.target.reset() //returns form element, and clear form to default value
         
     }) 
+
+    // let comments = ""
+
 })

@@ -67,3 +67,8 @@ h4 {
 label.comedian {
     font-size: 200%;
 }
+
+#comedy-title{
+    font-size: 300%;
+    text-align: center;
+}

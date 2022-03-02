@@ -20,7 +20,8 @@ class Event {
         const eventContainer = document.createElement("div")
         eventContainer.id = `event-${this.id}` //make sure each id is different so we can target it.
         eventContainer.innerHTML = `
-            <h4>Name: ${this.comedian_name} ${this.name} ${this.address} ${this.city} ${this.state} ${this.zipcode} ${this.date} ${this.venue}</h4>
+            <h4>Comedian Name: ${this.comedian_name}  Tour Name: ${this.name}  Address: ${this.address} ${this.city} ${this.state} ${this.zipcode}  </h4>
+            <h4><p>Date and Time: ${this.date}   Venue: ${this.venue} </p></h4>
             <button class="edit-event">Edit</button>
             <button class="delete-event">Delete</button>
         `
@@ -42,7 +43,7 @@ class Event {
         <h2>Edit Event:</h2>
         <select name="comedian_id" class="comedian-list">   
         </select></p>
-        <label for="name">Name:</label>
+        <label for="name">Event Name:</label>
         <input type="text" name="name" value="${this.name}"/>
         <label for="address">Address:</label>
         <input type="text" name="address" value="${this.address}"/>
@@ -92,7 +93,7 @@ class Event {
 
         const eventContainer = document.getElementById(`event-${this.id}`)
         eventContainer.innerHTML = `
-            <h4>Name:  ${this.comedian_name} ${this.name} ${this.address} ${this.city} ${this.state} ${this.zipcode} ${this.date} ${this.venue}</h4>
+            <h4>Name:  ${this.comedian_name} ${this.name}   Address: ${this.address} ${this.city} ${this.state} ${this.zipcode}   Date: ${this.date}    Venue: ${this.venue}</h4>
             <button class="edit-event">Edit</button>
             <button class="delete-event">Delete</button>
         `
